@@ -1,0 +1,17 @@
+# Steuert Netlify. Kein Build: der Ordner public/ wird ausgeliefert, wie er im Repo liegt.
+# Geschrieben von scripts/veroeffentlichung.py --einrichten (Projekt "Claude Chatbot Workflow") - nicht von Hand aendern.
+
+[build]
+  publish = "public"
+
+[build.processing]
+  skip_processing = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "no-referrer"
+    X-Robots-Tag = "noindex"
+    Content-Security-Policy = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"
