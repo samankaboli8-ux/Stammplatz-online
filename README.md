@@ -1,7 +1,7 @@
 # stammplatz-online
 
 Oeffentliche Seiten des Chatbot-Produkts, ausgeliefert von Netlify aus dem Ordner `public/`
-(https://stammplatz-online.netlify.app/). Kein Build - was hier liegt, wird so ausgeliefert.
+(https://www.stammplatz-online.de/). Kein Build - was hier liegt, wird so ausgeliefert.
 
 Alles hier schreibt das Projekt "Claude Chatbot Workflow" (`scripts/veroeffentlichung.py`):
 
