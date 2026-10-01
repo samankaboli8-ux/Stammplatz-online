@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technische und organisatorische Maßnahmen (TOMs)</title>
+<style>
+@page { size: A4; margin: 20mm 18mm 22mm 18mm; }
+body { font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+       font-size: 10.5pt; line-height: 1.45; color: #1a1a1a; max-width: 720pt; margin: 0 auto; padding: 0 12pt; }
+h1 { font-size: 19pt; line-height: 1.25; margin: 0 0 10pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 7pt; padding-bottom: 2pt; border-bottom: 1px solid #1a1a1a; break-after: avoid; }
+h3 { font-size: 11.5pt; margin: 14pt 0 5pt; break-after: avoid; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 20pt; }
+li { margin-bottom: 3pt; }
+hr { border: 0; border-top: 1px solid #c8c8c8; margin: 12pt 0; }
+code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9.3pt; background: #f1f1f1; padding: 0 3pt; border-radius: 2pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 9.6pt; break-inside: avoid; }
+th, td { border: 1px solid #c8c8c8; padding: 4pt 6pt; vertical-align: top; text-align: left; }
+th { background: #ececec; }
+mark.offen { background: #ffe97a; padding: 0 2pt; }
+footer { margin-top: 28pt; padding-top: 8pt; border-top: 1px solid #c8c8c8; font-size: 9.5pt; color: #555; }
+footer a { color: #555; }
+</style></head>
+<body>
+<h1>Technische und organisatorische Maßnahmen (TOMs)</h1>
+<h2>Anlage 1 zum AVV · gemäß Art. 32 DSGVO</h2>
+<p><b>Anlage 1 zum AVV, Fassung avv-0481c50684.</b> Zurück zum Vertrag: <a href="/avv/">/avv/</a>.</p>
+<p><b>System:</b> Telegram-Chatbot „Name des Bots laut Formular" von Name des Geschäfts laut Formular<br><b>Betrieben von:</b> Saman Kaboli auf der n8n-Cloud-Instanz <code>samankaboli.app.n8n.cloud</code><br><b>Workflows:</b> Chatbot <code>je Kunde ein eigener Chatbot-Workflow</code>, Löschlauf <code>je Kunde ein eigener Löschlauf</code><br><b>Stand:</b> 01.10.2026<br><b>Fassung:</b> avv-0481c50684<br><b>Risikostufe:</b> niedrig (keine besonderen Kategorien nach Art. 9 DSGVO)</p>
+<hr>
+<h2>1. Zutrittskontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Kein eigener Server</td><td>✅</td><td>Verarbeitung ausschließlich in der n8n Cloud; der Auftragnehmer betreibt keine eigene Hardware mit Kundendaten</td></tr>
+<tr><td>Rechenzentrum</td><td>✅</td><td>Betrieb und physische Sicherung obliegen der n8n GmbH als Unterauftragsverarbeiter (Anlage 2)</td></tr></tbody></table>
+<hr>
+<h2>2. Zugangskontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Bot-Tokens und API-Schlüssel</td><td>✅</td><td>Als verschlüsselte n8n-Zugangsdaten gespeichert, nicht im Workflow</td></tr>
+<tr><td>Getrennte Bots</td><td>✅</td><td>Kundenbot und Personal-Bot haben eigene Tokens; kein Auftraggeber teilt einen Bot mit einem anderen</td></tr>
+<tr><td>Absenderprüfung Personal-Bot</td><td>✅</td><td>Nur Telegram-IDs aus <code>staffAllowedIds</code> dürfen Aktionen auslösen; alle anderen erhalten eine Abweisung</td></tr>
+<tr><td>API-Zugang zur Instanz</td><td>✅</td><td>API-Key-Authentisierung; der Key liegt nicht in der Versionsverwaltung</td></tr></tbody></table>
+<hr>
+<h2>3. Zugriffskontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Einwilligungs-Gate</td><td>✅</td><td>Nachrichten werden erst nach ausdrücklicher Einwilligung inhaltlich verarbeitet; die Einwilligung steht mit Zeitpunkt und Textfassung im Einwilligungsprotokoll</td></tr>
+<tr><td>Pseudonymisierte Protokolle</td><td>✅</td><td>Betriebsprotokoll und Löschnachweis speichern nur eine schlüsselgebundene Prüfsumme der Chat-ID (HMAC-SHA256, eigener Schlüssel je Auftraggeber), nie die Chat-ID selbst</td></tr>
+<tr><td>Datenminimierung</td><td>✅</td><td>Keine E-Mail-Adresse, Telefonnummer, Anschrift, kein Geburtsdatum, keine Zahlungsdaten</td></tr></tbody></table>
+<hr>
+<h2>4. Weitergabekontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Transportverschlüsselung</td><td>✅</td><td>Alle Verbindungen (Telegram, n8n) über TLS</td></tr>
+<tr><td>Eingang nur über Telegram</td><td>✅</td><td>Der Kundenpfad hat keinen eigenen offenen Webhook; Telegram-Aufrufe tragen ein geheimes Prüf-Token</td></tr>
+<tr><td>Keine Weitergabe zu Werbezwecken</td><td>✅</td><td>Daten gehen an keine Dritten außerhalb von Anlage 2</td></tr></tbody></table>
+<hr>
+<h2>5. Eingabekontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Betriebsprotokoll</td><td>✅</td><td>Speichernde Vorgänge (Einwilligung, Löschung, Feedback und Dankeschön, Stempel-Anfragen, Stempel und Einlösung von Codes und Newsletter-An- und -Abmeldung) mit Zeitpunkt, Aktion, Prüfsumme der Chat-ID, Knoten und Ergebnis</td></tr>
+<tr><td>Abdeckung</td><td>⚠️</td><td>Protokolliert werden die genannten Vorgänge, nicht jede einzelne Leseoperation</td></tr>
+<tr><td>Löschnachweis</td><td>✅</td><td>Jede Löschung auf Wunsch der betroffenen Person wird festgehalten</td></tr>
+<tr><td>Protokoll der Löschläufe</td><td>✅</td><td>Jeder nächtliche Löschlauf schreibt die Anzahl gelöschter Zeilen je Tabelle</td></tr></tbody></table>
+<hr>
+<h2>6. Verfügbarkeitskontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Datenspeicherung</td><td>✅</td><td>n8n Data Tables in der n8n Cloud; Redundanz und Sicherung obliegen der n8n GmbH</td></tr>
+<tr><td>Fehlerbehandlung</td><td>✅</td><td>Schreibende Schritte brechen bei Fehlern ab, statt mit unvollständigen Daten weiterzulaufen; Nebenpfade wie das Protokoll halten eine Kundenaktion nicht auf</td></tr>
+<tr><td>Fehlermeldung an den Betreiber</td><td>✅</td><td>Ausführungsfehler gehen an einen zentralen Fehler-Workflow, der den Auftragnehmer benachrichtigt — ohne Kundendaten in der Meldung</td></tr>
+<tr><td>Löschlauf unabhängig vom Nutzer</td><td>✅</td><td>täglich 03:00 Uhr (Europe/Berlin)</td></tr></tbody></table>
+<hr>
+<h2>7. Trennungskontrolle</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Mandantentrennung</td><td>✅</td><td>Jeder Auftraggeber hat eigene Workflows, eigene Bots und eigene Tabellen mit dem Präfix <code>kunde_</code></td></tr>
+<tr><td>Trennung nach Zweck</td><td>✅</td><td>Je Zweck eine eigene Tabelle (siehe Abschnitt 9)</td></tr>
+<tr><td>Test und Betrieb</td><td>✅</td><td>Änderungen werden an einem eigenen Test-Mandanten mit eigenen Bots und Tabellen geprüft, bevor sie an Auftraggeber ausgerollt werden</td></tr></tbody></table>
+<hr>
+<h2>8. Pseudonymisierung und Verschlüsselung</h2>
+<table><thead><tr><th>Maßnahme</th><th>Status</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Prüfsumme statt Chat-ID</td><td>✅</td><td>64-Bit-Prüfsumme (FNV-1a und djb2), einheitlich in Betriebsprotokoll und Löschnachweis</td></tr>
+<tr><td>Einordnung</td><td>✅</td><td>Pseudonymisierung nach Art. 4 Nr. 5 DSGVO, keine Anonymisierung: mit dem Schlüssel des Auftraggebers lässt sich die Prüfsumme zu einer bekannten Chat-ID nachrechnen, ohne ihn nicht. Der Schlüssel liegt nur in der Konfiguration beim Auftragnehmer; derselbe Gast hat bei jedem Auftraggeber eine andere Prüfsumme</td></tr>
+<tr><td>Verschlüsselung gespeicherter Daten</td><td>✅</td><td>durch die n8n-Cloud-Plattform</td></tr>
+<tr><td>Verschlüsselung bei der Übertragung</td><td>✅</td><td>TLS für alle Verbindungen</td></tr></tbody></table>
+<hr>
+<h2>9. Löschung und Aufbewahrungsfristen</h2>
+<p>Alle Fristen setzt der nächtliche Löschlauf durch. Er <b>löscht Zeilen</b>; es wird nichts nur überschrieben.</p>
+<table><thead><tr><th>Datenkategorie</th><th>Tabelle</th><th>Frist</th><th>Gerechnet ab</th><th>Durchsetzung</th></tr></thead><tbody>
+<tr><td>Teilnehmerdaten</td><td><code>kunde_teilnehmer</code></td><td>365 Tage</td><td>letzter inhaltlicher Aktion</td><td>Löschlauf + <code>/loeschen</code></td></tr>
+<tr><td>Stempelkarte</td><td><code>kunde_stempelkarte</code></td><td>730 Tage</td><td>letztem Stempel</td><td>Löschlauf + <code>/loeschen</code></td></tr>
+<tr><td>Einwilligungen</td><td><code>kunde_consent_log</code></td><td>1095 Tage</td><td>Einwilligung oder letzter Nutzung, je nachdem was später ist</td><td>Löschlauf + <code>/loeschen</code></td></tr>
+<tr><td>Unbestätigte Newsletter-Anmeldung</td><td><code>kunde_pending_optin</code></td><td>7 Tage</td><td>Anmeldung</td><td>Löschlauf; sofort nach Bestätigung oder Ablehnung</td></tr>
+<tr><td>Betriebsprotokoll</td><td><code>kunde_audit_log</code></td><td>1095 Tage</td><td>Ereignis</td><td>Löschlauf</td></tr>
+<tr><td>Löschnachweis</td><td><code>kunde_deletion_log</code></td><td>1095 Tage</td><td>Löschung</td><td>Löschlauf</td></tr>
+<tr><td>Protokoll der Löschläufe</td><td><code>kunde_cleanup_log</code></td><td>keine</td><td>—</td><td>entfällt: nur Zähler, kein Personenbezug</td></tr></tbody></table>
+<p><b>Begründung:</b> Das Einwilligungsprotokoll dient dem Nachweis nach Art. 7 Abs. 1 DSGVO, das Betriebsprotokoll der Rechenschaftspflicht nach Art. 5 Abs. 2 DSGVO. Der Löschnachweis ist zugleich die Sperrliste gegen mehrfaches Abholen des Dankeschöns fürs Feedback; seine Frist ist deshalb nie kürzer als die der Teilnehmerdaten. Nicht bestätigte Newsletter-Anmeldungen sind nach Fristablauf zwecklos (Art. 5 Abs. 1 lit. e DSGVO).</p>
+<hr>
+<h2>10. Betroffenenrechte — technische Umsetzung</h2>
+<table><thead><tr><th>Recht</th><th>Art. DSGVO</th><th>Umsetzung</th></tr></thead><tbody>
+<tr><td>Auskunft</td><td>Art. 15</td><td><code>/meinedaten</code> — gibt die gespeicherten Daten im Chat aus</td></tr>
+<tr><td>Datenübertragbarkeit</td><td>Art. 20</td><td><code>/export</code> — dieselben Daten maschinenlesbar</td></tr>
+<tr><td>Löschung</td><td>Art. 17</td><td><code>/loeschen</code> — entfernt Profil, Einwilligung, Stempelkarte, offene Newsletter-Anmeldung und schreibt einen Löschnachweis</td></tr>
+<tr><td>Widerruf</td><td>Art. 7 Abs. 3</td><td><code>/loeschen</code>; Newsletter mit „Abmelden". „Ablehnen“ im Einwilligungsdialog verhindert eine Einwilligung, widerruft aber keine frühere</td></tr>
+<tr><td>Information</td><td>Art. 13</td><td>Einwilligungstext nennt Zweck, Empfänger, Speicherdauer und Rechte und verweist auf die Datenschutzerklärung</td></tr></tbody></table>
+<hr>
+<h2>11. Vom Auftragnehmer zu bestätigen</h2>
+<table><thead><tr><th>#</th><th>Punkt</th><th>Stand</th></tr></thead><tbody>
+<tr><td>1</td><td>Hosting-Region der n8n-Instanz schriftlich bei n8n bestätigen lassen</td><td>Germany West Central (Frankfurt am Main)</td></tr>
+<tr><td>2</td><td>Zwei-Faktor-Authentisierung für alle Konten mit Zugang zur n8n-Instanz</td><td>vom Auftragnehmer zu bestätigen</td></tr>
+<tr><td>3</td><td>AVV mit n8n GmbH abgeschlossen</td><td>vom Auftragnehmer zu bestätigen</td></tr></tbody></table>
+<footer><a href="/">Start</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz dieser Website</a></footer>
+</body></html>

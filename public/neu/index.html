@@ -42,6 +42,7 @@ footer a { color: #555; }
 <p>Etwa 10 Minuten. Alles, was hier steht, landet wörtlich im Chat und in Ihrer Datenschutzerklärung. Was Sie nicht wissen, lassen Sie frei – das klären wir gemeinsam. Felder mit <span class="pflicht">*</span> brauchen wir auf jeden Fall.</p>
 <form name="neuer-kunde" method="POST" action="/neu/danke/" data-netlify="true" netlify-honeypot="bot-field">
 <input type="hidden" name="form-name" value="neuer-kunde">
+<input type="hidden" name="avvFassung" value="avv-0481c50684">
 <p class="versteckt"><label>Bitte frei lassen: <input name="bot-field"></label></p>
 <fieldset><legend>1. Ihr Geschäft</legend>
 <div class="feld"><label for="f-boutiqueName">Name, so wie er im Chat erscheinen soll <span class="pflicht">*</span></label><input id="f-boutiqueName" type="text" name="boutiqueName" value="" required></div>
@@ -86,6 +87,12 @@ footer a { color: #555; }
 <fieldset><legend>8. Datenschutzerklärung und Sonstiges</legend>
 <div class="feld"><label for="f-privacyUrl">Eigene Adresse für die Datenschutzerklärung</label><input id="f-privacyUrl" type="text" name="privacyUrl" value="" pattern="https://.*" placeholder="https://"><small>Nur ausfüllen, wenn die Erklärung auf Ihrer eigenen Website liegen soll. Sonst leer lassen – wir stellen sie unter www.stammplatz-online.de bereit.</small></div>
 <div class="feld"><label for="f-bemerkungen">Anmerkungen</label><textarea id="f-bemerkungen" name="bemerkungen" rows="3"></textarea><small>Öffnungszeiten, Wünsche, Fragen – alles, was wir wissen sollten.</small></div>
+</fieldset>
+<fieldset><legend>9. Auftragsverarbeitungsvertrag (AVV)</legend>
+<p class="klein">Damit wir die Daten Ihrer Gäste für Sie verarbeiten dürfen, verlangt Art. 28 DSGVO einen Vertrag zwischen Ihnen und uns. Er kann elektronisch geschlossen werden (Art. 28 Abs. 9 DSGVO) – mit dem Haken unten. Bitte vorher lesen: <a href="/avv/" target="_blank">Vertrag</a>, <a href="/avv/toms/" target="_blank">Anlage 1 – Technische und organisatorische Maßnahmen</a>, <a href="/avv/unterauftragsverarbeiter/" target="_blank">Anlage 2 – Unterauftragsverarbeiter</a>. Die Ausfertigung mit Ihren Angaben und den gewählten Modulen erhalten Sie nach dem Abschluss per E-Mail. Wenn jemand anderes für Sie ausfüllt, lassen Sie den Haken frei; der Vertrag kommt dann per E-Mail zustande.</p>
+<div class="feld"><label for="f-avvPerson">Name der zeichnungsberechtigten Person</label><input id="f-avvPerson" type="text" name="avvPerson" value=""><small>Vor- und Nachname. Nur nötig, wenn Sie den Haken setzen.</small></div>
+<div class="feld"><label for="f-avvFunktion">Funktion</label><input id="f-avvFunktion" type="text" name="avvFunktion" value=""><small>Zum Beispiel Inhaberin, Geschäftsführer.</small></div>
+<label class="kasten"><input type="checkbox" name="avvAnnahme" value="ja"> <b>Ich schließe für das oben genannte Geschäft mit Saman Kaboli den Auftragsverarbeitungsvertrag in der verlinkten Fassung ab, mit Anlage 1 und Anlage 2.</b> – Zeitpunkt und Fassung werden festgehalten.</label>
 </fieldset>
 <p class="klein">Datenschutz: Ihre Angaben gehen an Saman Kaboli und dienen der Vorbereitung unseres Vertrags (Art. 6 Abs. 1 lit. b DSGVO). Beim Absenden nimmt Netlify, Inc. (USA) sie entgegen und speichert sie nur, bis wir sie abholen – danach werden sie dort gelöscht. Mit Netlify besteht ein Auftragsverarbeitungsvertrag; Netlify ist unter dem EU-US Data Privacy Framework zertifiziert. Mehr im <a href="/datenschutz/">Datenschutzhinweis dieser Website</a>.</p>
 <button type="submit">Absenden</button>

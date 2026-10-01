@@ -1,4 +1,4 @@
-# stammplatz-online
+# Stammplatz-online
 
 Oeffentliche Seiten des Chatbot-Produkts, ausgeliefert von Netlify aus dem Ordner `public/`
 (https://www.stammplatz-online.de/). Kein Build - was hier liegt, wird so ausgeliefert.
