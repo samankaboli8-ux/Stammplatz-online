@@ -14,4 +14,4 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "no-referrer"
     X-Robots-Tag = "noindex"
-    Content-Security-Policy = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"
+    Content-Security-Policy = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'self'"

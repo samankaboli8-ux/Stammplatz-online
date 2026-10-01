@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ihr Chatbot – Fragebogen</title>
+<style>
+@page { size: A4; margin: 20mm 18mm 22mm 18mm; }
+body { font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+       font-size: 10.5pt; line-height: 1.45; color: #1a1a1a; max-width: 720pt; margin: 0 auto; padding: 0 12pt; }
+h1 { font-size: 19pt; line-height: 1.25; margin: 0 0 10pt; }
+h2 { font-size: 13.5pt; margin: 20pt 0 7pt; padding-bottom: 2pt; border-bottom: 1px solid #1a1a1a; break-after: avoid; }
+h3 { font-size: 11.5pt; margin: 14pt 0 5pt; break-after: avoid; }
+p { margin: 0 0 7pt; }
+ul, ol { margin: 0 0 8pt; padding-left: 20pt; }
+li { margin-bottom: 3pt; }
+hr { border: 0; border-top: 1px solid #c8c8c8; margin: 12pt 0; }
+code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9.3pt; background: #f1f1f1; padding: 0 3pt; border-radius: 2pt; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 9.6pt; break-inside: avoid; }
+th, td { border: 1px solid #c8c8c8; padding: 4pt 6pt; vertical-align: top; text-align: left; }
+th { background: #ececec; }
+mark.offen { background: #ffe97a; padding: 0 2pt; }
+
+fieldset { border: 1px solid #c8c8c8; border-radius: 4pt; padding: 10pt 12pt 4pt; margin: 0 0 14pt; }
+legend { font-weight: 700; padding: 0 4pt; }
+.feld { margin: 0 0 10pt; }
+.feld label { display: block; font-weight: 600; margin-bottom: 2pt; }
+.feld input, .feld select, .feld textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 6pt 7pt;
+  border: 1px solid #999; border-radius: 3pt; background: #fff; color: inherit; }
+.feld.kurz input { max-width: 120pt; }
+.feld small { display: block; color: #555; font-size: 9.3pt; margin-top: 2pt; }
+.kasten { display: block; margin: 0 0 8pt; }
+.kasten input { margin-right: 6pt; }
+.pflicht { color: #b00020; }
+.versteckt { display: none; }
+button { font: inherit; font-weight: 700; padding: 8pt 18pt; border: 0; border-radius: 4pt;
+  background: #1a1a1a; color: #fff; cursor: pointer; }
+.klein { color: #555; font-size: 9.5pt; }
+footer { margin-top: 28pt; padding-top: 8pt; border-top: 1px solid #c8c8c8; font-size: 9.5pt; color: #555; }
+footer a { color: #555; }
+</style></head>
+<body>
+<h1>Ihr Chatbot – Fragebogen</h1>
+<p>Etwa 10 Minuten. Alles, was hier steht, landet wörtlich im Chat und in Ihrer Datenschutzerklärung. Was Sie nicht wissen, lassen Sie frei – das klären wir gemeinsam. Felder mit <span class="pflicht">*</span> brauchen wir auf jeden Fall.</p>
+<form name="neuer-kunde" method="POST" action="/neu/danke/" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="neuer-kunde">
+<p class="versteckt"><label>Bitte frei lassen: <input name="bot-field"></label></p>
+<fieldset><legend>1. Ihr Geschäft</legend>
+<div class="feld"><label for="f-boutiqueName">Name, so wie er im Chat erscheinen soll <span class="pflicht">*</span></label><input id="f-boutiqueName" type="text" name="boutiqueName" value="" required></div>
+<div class="feld"><label for="f-city">Stadt / Stadtteil</label><input id="f-city" type="text" name="city" value=""></div>
+<div class="feld"><label for="f-contactEmail">Kontakt-E-Mail für Gäste <span class="pflicht">*</span></label><input id="f-contactEmail" type="email" name="contactEmail" value="" required><small>Steht im Chat und in der Datenschutzerklärung.</small></div>
+<div class="feld"><label for="f-instagramHandle">Instagram (optional)</label><input id="f-instagramHandle" type="text" name="instagramHandle" value=""><small>Ohne @.</small></div>
+<div class="feld"><label for="f-botName">Vorname des Bots im Chat</label><input id="f-botName" type="text" name="botName" value=""><small>Zum Beispiel „Sunny“ – so stellt er sich vor. Leer = Name des Geschäfts.</small></div>
+</fieldset>
+<fieldset><legend>2. Anschrift – nur für die Datenschutzerklärung</legend>
+<div class="feld"><label for="f-strasse">Straße und Hausnummer <span class="pflicht">*</span></label><input id="f-strasse" type="text" name="strasse" value="" required></div>
+<div class="feld kurz"><label for="f-plz">PLZ <span class="pflicht">*</span></label><input id="f-plz" type="text" name="plz" value="" required></div>
+<div class="feld"><label for="f-ort">Ort <span class="pflicht">*</span></label><input id="f-ort" type="text" name="ort" value="" required></div>
+<div class="feld"><label for="f-telefon">Telefon</label><input id="f-telefon" type="text" name="telefon" value=""></div>
+<div class="feld"><label for="f-bundesland">Bundesland <span class="pflicht">*</span></label><select id="f-bundesland" name="bundesland" required><option value="">Bitte wählen</option><option value="Baden-Württemberg">Baden-Württemberg</option><option value="Bayern">Bayern</option><option value="Berlin">Berlin</option><option value="Brandenburg">Brandenburg</option><option value="Bremen">Bremen</option><option value="Hamburg">Hamburg</option><option value="Hessen">Hessen</option><option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option><option value="Niedersachsen">Niedersachsen</option><option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option><option value="Rheinland-Pfalz">Rheinland-Pfalz</option><option value="Saarland">Saarland</option><option value="Sachsen">Sachsen</option><option value="Sachsen-Anhalt">Sachsen-Anhalt</option><option value="Schleswig-Holstein">Schleswig-Holstein</option><option value="Thüringen">Thüringen</option></select><small>Bestimmt die zuständige Datenschutz-Aufsichtsbehörde.</small></div>
+<div class="feld"><label for="f-dsbBestellt">Haben Sie einen Datenschutzbeauftragten bestellt?</label><select id="f-dsbBestellt" name="dsbBestellt"><option value="nein" selected>nein</option><option value="ja">ja</option></select></div>
+</fieldset>
+<fieldset><legend>3. Welches Paket möchten Sie?</legend>
+<p class="klein">Mehrfachauswahl möglich, mindestens eines. Später zu- oder abbuchen geht jederzeit.</p>
+<label class="kasten"><input type="checkbox" name="modulBewertung" value="ja" checked> <b>Google-Bewertung</b> – „Gefällt es dir bei uns?“ mit 1–5 Sternen, ein Dankeschön, danach eine unverbindliche Google-Einladung.</label>
+<label class="kasten"><input type="checkbox" name="modulStempelkarte" value="ja" checked> <b>Stempelkarte</b> – Digitale Stempelkarte im Chat; Ihr Team gibt Stempel per Knopfdruck frei.</label>
+<label class="kasten"><input type="checkbox" name="modulNewsletter" value="ja" checked> <b>Newsletter</b> – Gäste melden sich im Chat an; eine Nachricht an Ihren Personal-Bot geht an alle.</label>
+</fieldset>
+<fieldset><legend>4. Google-Bewertung</legend>
+<p class="klein">Nur ausfüllen, wenn Sie das Modul möchten.</p>
+<div class="feld"><label for="f-reviewUrl">Ihr Google-Bewertungslink</label><input id="f-reviewUrl" type="text" name="reviewUrl" value="" pattern="https://.*" placeholder="https://"><small>Google Unternehmensprofil → „Rezensionen erhalten“ → Link teilen. Beginnt mit https://</small></div>
+<div class="feld"><label for="f-rewardText">Dankeschön fürs Feedback</label><input id="f-rewardText" type="text" name="rewardText" value="10% Rabatt"><small>Zum Beispiel „ein Heißgetränk gratis“ oder „10 % auf den Einkauf“.</small></div>
+<div class="feld"><label for="f-redeemHint">Wie wird es eingelöst?</label><input id="f-redeemHint" type="text" name="redeemHint" value="Zeige einfach unserem Team diese Nachricht."></div>
+</fieldset>
+<fieldset><legend>5. Stempelkarte</legend>
+<p class="klein">Nur ausfüllen, wenn Sie das Modul möchten.</p>
+<div class="feld kurz"><label for="f-stampGoal">Stempel pro Runde</label><input id="f-stampGoal" type="number" name="stampGoal" min="1" max="100" value="10"></div>
+<div class="feld"><label for="f-stampRewardText">Belohnung bei voller Karte</label><input id="f-stampRewardText" type="text" name="stampRewardText" value="20% Rabatt"><small>Zum Beispiel „ein Stück Kuchen“.</small></div>
+</fieldset>
+<fieldset><legend>6. Newsletter</legend>
+<p class="klein">Nur ausfüllen, wenn Sie das Modul möchten.</p>
+<div class="feld"><label for="f-newsletterThemen">Worüber informieren Sie?</label><input id="f-newsletterThemen" type="text" name="newsletterThemen" value="Angebote &amp; Neuigkeiten"><small>Zum Beispiel „neue Kuchen, Aktionen &amp; Neuigkeiten“.</small></div>
+</fieldset>
+<fieldset><legend>7. Ihr Team</legend>
+<div class="feld"><label for="f-team">Wer gibt Stempel frei und schreibt Newsletter?</label><textarea id="f-team" name="team" rows="3"></textarea><small>Name und Telegram-Benutzername, mehrere möglich. Die Chat-IDs brauchen Sie nicht herauszusuchen: Jede Person schreibt später den Personal-Bot an, und er nennt ihr die Nummer.</small></div>
+<div class="feld"><label for="f-staffChatId">Telegram-Chat-ID fürs Personal, falls schon bekannt</label><input id="f-staffChatId" type="text" name="staffChatId" value="" pattern="-?[0-9]{3,20}" inputmode="numeric"><small>Nur Ziffern; eine Gruppe beginnt mit einem Minus. Sonst leer lassen.</small></div>
+</fieldset>
+<fieldset><legend>8. Datenschutzerklärung und Sonstiges</legend>
+<div class="feld"><label for="f-privacyUrl">Eigene Adresse für die Datenschutzerklärung</label><input id="f-privacyUrl" type="text" name="privacyUrl" value="" pattern="https://.*" placeholder="https://"><small>Nur ausfüllen, wenn die Erklärung auf Ihrer eigenen Website liegen soll. Sonst leer lassen – wir stellen sie unter www.stammplatz-online.de bereit.</small></div>
+<div class="feld"><label for="f-bemerkungen">Anmerkungen</label><textarea id="f-bemerkungen" name="bemerkungen" rows="3"></textarea><small>Öffnungszeiten, Wünsche, Fragen – alles, was wir wissen sollten.</small></div>
+</fieldset>
+<p class="klein">Datenschutz: Ihre Angaben gehen an Saman Kaboli und dienen der Vorbereitung unseres Vertrags (Art. 6 Abs. 1 lit. b DSGVO). Beim Absenden nimmt Netlify, Inc. (USA) sie entgegen und speichert sie nur, bis wir sie abholen – danach werden sie dort gelöscht. Mit Netlify besteht ein Auftragsverarbeitungsvertrag; Netlify ist unter dem EU-US Data Privacy Framework zertifiziert. Mehr im <a href="/datenschutz/">Datenschutzhinweis dieser Website</a>.</p>
+<button type="submit">Absenden</button>
+</form>
+<footer><a href="/">Start</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz dieser Website</a></footer>
+</body></html>
