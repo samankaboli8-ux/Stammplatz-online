@@ -1,49 +1,341 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8">
+<html lang="de">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung für den Telegram-Chatbot von La Quesadilla</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F3EC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
-@page { size: A4; margin: 20mm 18mm 22mm 18mm; }
-body { font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-       font-size: 10.5pt; line-height: 1.45; color: #1a1a1a; max-width: 720pt; margin: 0 auto; padding: 0 12pt; }
-h1 { font-size: 19pt; line-height: 1.25; margin: 0 0 10pt; }
-h2 { font-size: 13.5pt; margin: 20pt 0 7pt; padding-bottom: 2pt; border-bottom: 1px solid #1a1a1a; break-after: avoid; }
-h3 { font-size: 11.5pt; margin: 14pt 0 5pt; break-after: avoid; }
-p { margin: 0 0 7pt; }
-ul, ol { margin: 0 0 8pt; padding-left: 20pt; }
-li { margin-bottom: 3pt; }
-hr { border: 0; border-top: 1px solid #c8c8c8; margin: 12pt 0; }
-code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9.3pt; background: #f1f1f1; padding: 0 3pt; border-radius: 2pt; }
-table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 9.6pt; break-inside: avoid; }
-th, td { border: 1px solid #c8c8c8; padding: 4pt 6pt; vertical-align: top; text-align: left; }
-th { background: #ececec; }
-mark.offen { background: #ffe97a; padding: 0 2pt; }
-footer { margin-top: 28pt; padding-top: 8pt; border-top: 1px solid #c8c8c8; font-size: 9.5pt; color: #555; }
-footer a { color: #555; }
-</style></head>
-<body>
-<h1>Datenschutzerklärung für den Telegram-Chatbot von La Quesadilla</h1>
+/* Stammplatz-Website: ein Stil fuer alle Seiten. Quelle des Designs: Claude Design, 12.10.2026 (Export bis 15.10. unter entwurf/, jetzt Git-Historie),
+   Fassung "Basis", Akzent Dunkelgruen. Die Startseite (startseite.html) bringt ihre Gestaltung inline mit,
+   so wie der Entwurf sie liefert; hier steht, was alle Seiten teilen: Farben, Schrift, Kopf, Fuss, Knoepfe,
+   Textseiten (Impressum, Datenschutz, AVV, Erklaerungen der Lokale) und das Formular. */
+:root {
+  --acc: #1F5C45;      /* Hauptfarbe: Tiefgruen (Knoepfe, Linien, Balken) - Variante A, 13.10. */
+  --akzent2: #2F7A58;  /* zweite Farbe: mittleres Gruen fuer Kennzeilen, Nummern, Striche */
+  --marke: #5FA384;    /* Salbei fuer die Marke (Ring und Punkt) */
+  --tint: #DCEBE1;     /* helle Flaeche in der Hauptfarbe: Nebenknoepfe, Datenschutz-Block, Kaesten */
+  --tint2: #C6DCCD;    /* etwas dunkler: Knopf beim Zeigen, Linien auf --tint */
+  --deep: #163F30;     /* dunkler Akzent: Hover, dunkler Hero */
+  --papier: #F7F3EC;   /* Seitenhintergrund */
+  --karte: #FFFDF9;    /* Karten, helle Abschnitte */
+  --linie: #E4DDD1;
+  --text: #1F2621;
+  --text2: #4A4F55;
+  --text3: #5A5F66;
+  color-scheme: light;
+}
+html { scroll-behavior: smooth; }
+/* Schrift (14.10.): Urbanist fuer alles - Ueberschriften, Wortmarke und Text; selbst gehostet (schrift/, OFL),
+   kein Nachladen von fremden Servern (CSP: font-src 'self'). */
+@font-face { font-family: "Urbanist"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url(/schrift/Urbanist-normal-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Urbanist"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url(/schrift/Urbanist-normal-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Urbanist"; font-style: italic; font-weight: 100 900; font-display: swap;
+  src: url(/schrift/Urbanist-italic-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Urbanist"; font-style: italic; font-weight: 100 900; font-display: swap;
+  src: url(/schrift/Urbanist-italic-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+body { margin: 0; background: var(--papier); color: var(--text);
+  font-family: "Urbanist", "Segoe UI", system-ui, sans-serif; }
+h1, h2, h3, legend, .marke span, .wortmarke { font-weight: 800; letter-spacing: -0.02em; }
+body { 
+  font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+* { box-sizing: border-box; }
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { color: var(--deep); }
+summary { list-style: none; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+main { flex: 1 0 auto; }
+
+/* Kopfzeile */
+.kopf { position: sticky; top: 0; z-index: 10; background: rgba(247, 243, 236, .92);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--linie); }
+.kopf > div { max-width: 1200px; margin: 0 auto; padding: 12px clamp(20px, 5vw, 48px);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.marke { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.marke span { font-size: 22px; font-weight: 750; letter-spacing: -0.035em; }
+
+/* Navigation in der Kopfzeile: ab 1000 px Breite nebeneinander, darunter als Menue (#menue:target; ein Tipp auf einen
+   Eintrag aendert die Adresse und schliesst das Menue damit von selbst; fixiert, damit das Oeffnen nicht scrollt) */
+.kopf-rechts { display: flex; align-items: center; gap: 6px; }
+.navi { display: flex; gap: clamp(14px, 2vw, 26px); font-size: 16px; font-weight: 600; }
+.navi a { color: var(--text2); text-decoration: none; padding: 10px 0; white-space: nowrap; }
+.navi a:hover { color: var(--deep); text-decoration: underline; text-underline-offset: 4px; }
+.navi-knopf { display: none; }
+section[id], div[id] { scroll-margin-top: 76px; }
+@media (max-width: 999px) {
+  .kopf > div { height: 68px; padding-top: 0; padding-bottom: 0; }
+  .navi { display: none; position: fixed; left: 0; right: 0; top: 69px; z-index: 11; flex-direction: column; gap: 0;
+    padding: 4px clamp(20px, 5vw, 48px) 14px; background: var(--papier); border-bottom: 1px solid var(--linie);
+    box-shadow: 0 24px 40px -30px rgba(35, 38, 42, .45); }
+  .navi a { padding: 13px 0; border-top: 1px solid var(--linie); }
+  .navi-knopf { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; font-size: 16px;
+    font-weight: 600; color: var(--text); cursor: pointer; user-select: none; text-decoration: none; }
+  .navi-knopf::before { content: ""; width: 18px; height: 2px; background: currentColor;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor; }
+  .navi:target { display: flex; }
+  .navi-zu { display: none; }
+  .navi-zu::before { content: "✕"; width: auto; height: auto; background: none; box-shadow: none; font-size: 18px; line-height: 1; }
+  .navi:target ~ .kopf-rechts .navi-auf { display: none; }
+  .navi:target ~ .kopf-rechts .navi-zu { display: inline-flex; }
+}
+@media (max-width: 520px) {
+  .kopf > div { padding-left: 16px; padding-right: 16px; gap: 8px; }
+  .navi-knopf { padding: 0 8px; }
+  .navi-knopf span { display: none; }
+  .kopf .knopf.kompakt { padding: 0 13px; font-size: 15px; }
+}
+
+/* Hero: dunkle Flaeche in der Hauptfarbe, helle Schrift, Knoepfe in Creme - das Handy sticht hervor */
+.hero { background: linear-gradient(160deg, var(--deep) 0%, var(--acc) 100%); color: #F7F3EC; }
+.hero .hero-text h1, .hero .hero-text p { color: #F7F3EC; }
+.hero .hero-text .hero-dezent { color: rgba(247, 243, 236, .72); }
+.hero .wortmarke { color: #F7F3EC; }
+.hero .chat { color: var(--text); }   /* das Handy bleibt hell, wie es ist */
+.hero .knopf { background: #F7F3EC; color: var(--deep); }
+.hero .knopf:hover { background: #fff; color: var(--deep); }
+.hero .knopf-leer { border-color: rgba(247, 243, 236, .55); color: #F7F3EC; }
+.hero .knopf-leer:hover { border-color: #F7F3EC; color: #F7F3EC; }
+/* Hinweis unterm Handy: voll hell (15.10.). Die Startseite steckt in div.start (veroeffentlichung.py), und ".start p.hinweis-tippen" weiter unten
+   wiegt gleich viel wie ".hero p.hinweis-tippen" - deshalb hier eine Klasse mehr, sonst bleibt der Hinweis grau. */
+.hero .hinweis-tippen, .start .hero p.hinweis-tippen { color: #F7F3EC; }
+.hero .handy { box-shadow: inset 0 0 0 1.5px #3A3A3D, 0 50px 90px -40px rgba(0, 0, 0, .8), 0 2px 8px rgba(0, 0, 0, .3); }
+.hero .tipp::before { border-color: #F7F3EC; }
+
+/* Knoepfe */
+.knopf { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px;
+  border-radius: 14px; border: 0; background: var(--acc); color: #fff; font: inherit; font-size: 18px;
+  font-weight: 600; line-height: 1.2; text-decoration: none; cursor: pointer; }
+.knopf:hover { background: var(--deep); color: #fff; }
+.knopf.kompakt { background: var(--tint); color: var(--deep); }   /* Nebenknopf in der Kopfzeile: hell */
+.knopf.kompakt:hover { background: var(--tint2); color: var(--deep); }
+/* .knopf.hell (im hellblauen Kasten) = voller Hauptknopf, hebt sich dort ab */
+.knopf.kompakt { min-height: 44px; padding: 0 18px; border-radius: 12px; font-size: 16px; white-space: nowrap; }
+.knopf-leer { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 22px;
+  border-radius: 14px; border: 1.5px solid #CFC6B8; color: var(--text); font-size: 18px; font-weight: 600;
+  text-decoration: none; }
+.knopf-leer:hover { border-color: var(--text); color: var(--text); }
+
+/* Startseite: Abstaende setzt der Entwurf selbst, hier nur die Grundregel */
+.start h1, .start h2, .start h3, .start p, .start ol, .start ul { margin: 0; }
+
+/* Textseiten: Impressum, Datenschutz, AVV, Erklaerungen der Lokale, Formular */
+.inhalt { max-width: 800px; margin: 0 auto;
+  padding: clamp(36px, 6vw, 72px) clamp(20px, 5vw, 48px) clamp(64px, 9vw, 112px); }
+.inhalt h1 { font-size: clamp(32px, 4.6vw, 46px); line-height: 1.1; font-weight: 750; letter-spacing: -0.03em;
+  margin: 0 0 24px; text-wrap: balance; }
+.inhalt h2 { font-size: clamp(24px, 3vw, 30px); line-height: 1.2; font-weight: 750; letter-spacing: -0.02em;
+  margin: 44px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--linie); }
+.inhalt h3 { font-size: 21px; line-height: 1.3; font-weight: 700; margin: 28px 0 8px; }
+.inhalt p { margin: 0 0 14px; text-wrap: pretty; }
+.inhalt ul, .inhalt ol { margin: 0 0 16px; padding-left: 24px; }
+.inhalt li { margin-bottom: 6px; }
+.inhalt hr { border: 0; border-top: 1px solid var(--linie); margin: 28px 0; }
+.inhalt a { color: var(--acc); font-weight: 600; }
+.inhalt a:hover { color: var(--deep); }
+.inhalt code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .9em;
+  background: #EFE8DC; padding: 1px 6px; border-radius: 6px; overflow-wrap: anywhere; }
+.inhalt table { border-collapse: collapse; width: 100%; margin: 12px 0 20px; font-size: 16px; }
+.inhalt th, .inhalt td { border: 1px solid var(--linie); padding: 8px 10px; vertical-align: top; text-align: left;
+  overflow-wrap: break-word; hyphens: auto; }
+.inhalt th { background: #F3EEE5; font-weight: 650; }
+.inhalt mark.offen { background: #FFE97A; padding: 0 3px; border-radius: 4px; }
+.klein { color: var(--text3); font-size: 16px; }
+
+/* Formular (Aufbau: scripts/fragebogen.py) */
+fieldset { border: 1px solid var(--linie); border-radius: 22px; padding: 20px clamp(18px, 3vw, 28px) 8px;
+  margin: 0 0 20px; background: var(--karte); min-width: 0; }
+legend { font-weight: 750; font-size: 22px; letter-spacing: -0.02em; padding: 0 8px; }
+.feld { margin: 0 0 18px; }
+.feld label { display: block; font-weight: 650; margin-bottom: 6px; }
+.feld input, .feld select, .feld textarea { width: 100%; min-height: 48px; font: inherit; padding: 11px 14px;
+  border: 1.5px solid #CFC6B8; border-radius: 12px; background: #fff; color: inherit; }
+.feld textarea { min-height: 112px; resize: vertical; }
+.feld input:focus, .feld select:focus, .feld textarea:focus { outline: 3px solid var(--tint); border-color: var(--acc); }
+.feld.kurz input { max-width: 180px; }
+.feld small { display: block; color: var(--text3); font-size: 16px; line-height: 1.45; margin-top: 6px; }
+.kasten { display: flex; gap: 12px; align-items: flex-start; margin: 0 0 14px; line-height: 1.45; }
+.kasten input { width: 22px; height: 22px; margin: 4px 0 0; flex: none; accent-color: var(--acc); }
+.pflicht { color: #A64B29; }
+.versteckt { display: none; }
+form .klein { margin: 8px 0 20px; }
+
+/* Gaeste-Seiten (19.10.): die Datenschutzerklaerung eines Lokals, verlinkt im Chat. Eigene Huelle (huelle-gast.html):
+   Kopf mit dem Namen des Lokals und "Zurueck zum Chat" statt der Stammplatz-Navigation - wer hier landet, ist Gast,
+   kein Wirt. Den Aufbau (Titelband, Inhaltsverzeichnis, ein Abschnitt je Karte) setzt veroeffentlichung.py um den
+   unveraenderten Rechtstext (_gast_aufbau). Diese Seiten bekommen stil.css ohne die Chat-Beispiele. */
+.gast-kopf > div { max-width: 1104px; padding-top: 10px; padding-bottom: 10px; }
+.gast-lokal { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.gast-lokal > span:last-child { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; }
+.gast-lokal b { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; }
+.gast-lokal small { font-size: 14px; color: var(--text3); font-weight: 600; }
+.gast-zeichen { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--acc); color: #FFFDF9;
+  display: grid; place-items: center; font-weight: 800; font-size: 19px; }
+.gast-kopf .knopf.kompakt { min-height: 42px; padding: 0 16px; }
+.gast .inhalt { max-width: none; padding: 0 0 clamp(32px, 6vw, 72px); }
+.gast-titel { background: linear-gradient(160deg, var(--deep) 0%, var(--acc) 100%); color: #FFFDF9;
+  padding: clamp(36px, 6vw, 72px) 0 clamp(32px, 5vw, 56px); }
+.gast-titel > div, .gast-rumpf { max-width: 1104px; margin: 0 auto; padding-left: clamp(20px, 5vw, 48px);
+  padding-right: clamp(20px, 5vw, 48px); }   /* buendig mit Kopf und Karten */
+.gast-titel .gast-zeile { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--tint); margin-bottom: 14px; }
+.gast .gast-titel h1 { color: #FFFDF9; max-width: 820px; margin: 0 0 18px; font-size: clamp(30px, 5vw, 50px); }
+.gast-titel p { margin: 0; color: rgba(255, 253, 249, .82); font-size: 16px; }
+.gast-titel p b { color: #FFFDF9; font-weight: 700; }
+.gast-rumpf { padding-top: clamp(20px, 4vw, 40px); display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.gast-toc { font-size: 16px; }
+.gast-toc ol { list-style: none; margin: 0; padding: 0; }
+.gast-toc li { margin: 0; }
+.gast-toc a { display: flex; gap: 10px; padding: 8px 0; color: var(--text2); text-decoration: none; font-weight: 600;
+  line-height: 1.3; }
+.gast-toc a:hover { color: var(--acc); }
+.gast-toc a span { flex: none; min-width: 22px; color: var(--akzent2); font-variant-numeric: tabular-nums; }
+.gast-toc details { background: var(--karte); border: 1px solid var(--linie); border-radius: 18px; padding: 0 18px; }
+.gast-toc summary { display: flex; justify-content: space-between; align-items: center; min-height: 54px;
+  font-weight: 750; color: var(--text); }
+.gast-toc summary::after { content: ""; width: 9px; height: 9px; border-right: 2px solid var(--acc);
+  border-bottom: 2px solid var(--acc); transform: rotate(45deg) translateY(-3px); transition: transform .2s; }
+.gast-toc details[open] summary::after { transform: rotate(-135deg) translateY(-3px); }
+.gast-toc details ol { padding: 0 0 12px; border-top: 1px solid var(--linie); }
+.gast-toc .gast-toc-seite { display: none; }
+.gast-text { min-width: 0; }
+.gast-text > hr { display: none; }
+.abschnitt { background: var(--karte); border: 1px solid var(--linie); border-radius: 22px;
+  padding: clamp(20px, 4vw, 36px); margin: 0 0 16px; scroll-margin-top: 84px; }
+.gast .abschnitt h2 { margin: 0 0 16px; padding: 0; border: 0; font-size: clamp(22px, 3vw, 28px); }
+.gast .abschnitt h3 { margin: 26px 0 8px; padding-top: 20px; border-top: 1px solid var(--linie); font-size: 19px; }
+.gast .abschnitt p, .gast .abschnitt li { font-size: 17px; }
+.gast .abschnitt > :last-child { margin-bottom: 0; }
+.gast .abschnitt table { border-collapse: separate; border-spacing: 0; border: 1px solid var(--linie);
+  border-radius: 14px; overflow: hidden; font-size: 15px; line-height: 1.45; }
+.gast .abschnitt th, .gast .abschnitt td { border: 0; border-bottom: 1px solid var(--linie); padding: 10px 12px; }
+.gast .abschnitt th { background: var(--tint); color: var(--deep); }
+.gast .abschnitt td:first-child { width: 42%; }
+.gast .abschnitt td + td, .gast .abschnitt th + th { border-left: 1px solid var(--linie); }
+.gast .abschnitt tr:last-child td { border-bottom: 0; }
+.gast .abschnitt code { background: var(--tint); color: var(--deep); font-weight: 600; }
+.gast-schluss { padding: 4px 6px 0; color: var(--text3); }
+.gast-schluss p { font-size: 15px; }
+.gast-zurueck { margin: 24px 0 0; display: flex; justify-content: center; }
+.gast-zurueck .knopf, .gast-zurueck .knopf:hover { color: #FFFDF9; }   /* nicht die Linkfarbe der Textseiten */
+@media (min-width: 1000px) {
+  .gast-rumpf { grid-template-columns: 250px minmax(0, 1fr); gap: 40px; }
+  .gast-toc details { display: none; }
+  .gast-toc .gast-toc-seite { display: block; position: sticky; top: 92px; }
+  .gast-toc-seite > b { display: block; font-size: 14px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--text3); margin: 6px 0 6px; }
+  .gast-toc-seite a { padding: 6px 0; font-size: 15px; }
+}
+/* Handy: Tabellenzeilen untereinander - erster Eintrag als Titel, die uebrigen mit ihrer Spaltenueberschrift */
+@media (max-width: 600px) {
+  .gast .abschnitt table, .gast .abschnitt tbody, .gast .abschnitt tr, .gast .abschnitt td { display: block; width: auto; }
+  .gast .abschnitt thead { display: none; }
+  .gast .abschnitt tr { padding: 12px 14px; border-bottom: 1px solid var(--linie); }
+  .gast .abschnitt tr:last-child { border-bottom: 0; }
+  .gast .abschnitt td, .gast .abschnitt td + td { border: 0; padding: 0; hyphens: manual; }
+  .gast .abschnitt td:first-child { width: auto; font-weight: 650; margin-bottom: 4px; }
+  .gast .abschnitt td + td { margin-top: 4px; }
+  .gast .abschnitt td + td::before { content: attr(data-th) ": "; font-weight: 650; color: var(--akzent2); }
+  .gast .abschnitt tr > td:nth-child(2):last-child::before { content: none; }   /* zwei Spalten: klar ohne Ueberschrift */
+}
+@media (max-width: 520px) {
+  .gast-lokal b { font-size: 17px; }
+  .gast-zeichen { width: 36px; height: 36px; font-size: 17px; }
+  .gast-kopf .knopf.kompakt { padding: 0 12px; font-size: 15px; }
+  .gast .abschnitt p, .gast .abschnitt li { font-size: 16px; }
+}
+
+
+/* Fusszeile */
+.fuss { border-top: 1px solid var(--linie); padding: 28px clamp(20px, 5vw, 48px) 40px; margin-top: auto; }
+.fuss > div { max-width: 1104px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px 32px;
+  justify-content: space-between; align-items: center; font-size: 16px; color: var(--text2); }
+.fuss span { display: flex; align-items: center; gap: 8px; }
+.fuss nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.fuss nav a { padding: 10px 0; }
+
+/* Raster der Startseite (15.10.): feste Spalten je Breite statt "auto-fit", damit nie eine Karte allein in einer Reihe
+   steht (vorher bei 768 und 1024 px: Module 2+1, Datenschutz 2+2+1, Preis 2+1, "So starten Sie" 2+1, Team-Liste 3+1).
+   Breiten: ab 1000 px Laptop (wie die Navigation), 640-999 px Tablet, darunter Handy. Die Container in
+   startseite.html tragen nur noch die Klasse, die Spalten stehen hier. */
+.raster-3, .raster-2, .raster-preis, .raster-module, .raster-datenschutz { display: grid; }
+.raster-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.raster-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.raster-preis { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+.raster-module { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.raster-datenschutz { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.raster-datenschutz > li { grid-column: span 2; }
+.raster-datenschutz > li:nth-child(n+4) { grid-column: span 3; }   /* 3 + 2: die letzten beiden breiter, keine Luecke */
+.modul { background: var(--karte); border: 1px solid var(--linie); border-radius: 22px; padding: clamp(22px, 3vw, 30px);
+  display: flex; flex-direction: column; gap: 18px; }
+.modul-text { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.modul-handy { margin-top: auto; display: flex; flex-direction: column; align-items: center; }
+/* FAQ: gleiche linke Kante wie alle Abschnitte - Ueberschrift links, Fragen rechts (vorher 820 px mittig) */
+.fragen-raster { max-width: 1104px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 4vw, 64px); align-items: start; }
+@media (max-width: 1199px) { .modul { padding: 20px; } }   /* 1000-1199 px: drei Karten nebeneinander, Handy etwas schmaler */
+@media (max-width: 999px) {
+  .raster-3, .raster-module { grid-template-columns: 1fr; }
+  .raster-preis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .raster-preis > :last-child { grid-column: 1 / -1; }   /* Komplettpaket ueber die volle Breite */
+  .raster-datenschutz > li, .raster-datenschutz > li:nth-child(n+4) { grid-column: span 3; }
+  .raster-datenschutz > li:last-child { grid-column: 1 / -1; }
+  .modul { flex-direction: row; align-items: center; gap: 28px; padding: clamp(22px, 3vw, 30px); }   /* Text links, Handy rechts */
+  .modul-text { flex: 1 1 240px; }
+  .modul-handy { margin-top: 0; flex: 0 0 auto; }
+  .fragen-raster { grid-template-columns: 1fr; gap: clamp(28px, 4vw, 40px); }
+}
+@media (max-width: 639px) {
+  .raster-2, .raster-preis { grid-template-columns: 1fr; }
+  .raster-preis > :last-child { grid-column: auto; }
+  .raster-datenschutz > li, .raster-datenschutz > li:nth-child(n+4), .raster-datenschutz > li:last-child { grid-column: 1 / -1; }
+  .modul { flex-direction: column; align-items: stretch; gap: 18px; }
+  .modul-text { flex: none; }
+  .modul-handy { margin-top: auto; }
+}
+@media (max-width: 520px) { .start .knopf, .start .knopf-leer { width: 100%; } }   /* Knoepfe auf dem Handy in voller Breite */
+</style>
+</head>
+<body class="gast">
+<header class="kopf gast-kopf">
+  <div>
+    <div class="gast-lokal">
+      <span class="gast-zeichen" aria-hidden="true">L</span>
+      <span><b>La Quesadilla</b><small>Datenschutz im Chat</small></span>
+    </div>
+    <a class="knopf kompakt" href="https://t.me/LaQuesadilla_Kundenchatbot">Zurück zum Chat</a>
+  </div>
+</header>
+<main>
+<!-- INHALT -->
+<div class="inhalt">
+<!-- gast --><header class="gast-titel"><div><span class="gast-zeile">Datenschutz · Telegram-Chat</span><!-- /gast --><h1>Datenschutzerklärung für den Telegram-Chatbot von La Quesadilla</h1>
 <p><b>Stand:</b> 12.10.2026 · <b>Fassung:</b> v1.5-2026-10+BSN</p>
-<hr>
+<!-- gast --></div></header><div class="gast-rumpf"><nav class="gast-toc" aria-label="Inhalt"><details><summary>Inhalt</summary><ol><li><a href="#abschnitt-1"><span>1</span>Wer ist verantwortlich?</a></li><li><a href="#abschnitt-2"><span>2</span>Worum geht es hier?</a></li><li><a href="#abschnitt-3"><span>3</span>Welche Daten verarbeiten wir, wozu und auf welcher Grundlage?</a></li><li><a href="#abschnitt-4"><span>4</span>Wer bekommt deine Daten?</a></li><li><a href="#abschnitt-5"><span>5</span>Werden Daten außerhalb der EU verarbeitet?</a></li><li><a href="#abschnitt-6"><span>6</span>Wie lange speichern wir deine Daten?</a></li><li><a href="#abschnitt-7"><span>7</span>Was passiert, wenn du löschen lässt?</a></li><li><a href="#abschnitt-8"><span>8</span>Deine Rechte</a></li><li><a href="#abschnitt-9"><span>9</span>Beschwerderecht</a></li><li><a href="#abschnitt-10"><span>10</span>Müssen deine Daten bereitgestellt werden?</a></li><li><a href="#abschnitt-11"><span>11</span>Sicherheit</a></li><li><a href="#abschnitt-12"><span>12</span>Änderungen dieser Erklärung</a></li></ol></details><div class="gast-toc-seite"><b>Inhalt</b><ol><li><a href="#abschnitt-1"><span>1</span>Wer ist verantwortlich?</a></li><li><a href="#abschnitt-2"><span>2</span>Worum geht es hier?</a></li><li><a href="#abschnitt-3"><span>3</span>Welche Daten verarbeiten wir, wozu und auf welcher Grundlage?</a></li><li><a href="#abschnitt-4"><span>4</span>Wer bekommt deine Daten?</a></li><li><a href="#abschnitt-5"><span>5</span>Werden Daten außerhalb der EU verarbeitet?</a></li><li><a href="#abschnitt-6"><span>6</span>Wie lange speichern wir deine Daten?</a></li><li><a href="#abschnitt-7"><span>7</span>Was passiert, wenn du löschen lässt?</a></li><li><a href="#abschnitt-8"><span>8</span>Deine Rechte</a></li><li><a href="#abschnitt-9"><span>9</span>Beschwerderecht</a></li><li><a href="#abschnitt-10"><span>10</span>Müssen deine Daten bereitgestellt werden?</a></li><li><a href="#abschnitt-11"><span>11</span>Sicherheit</a></li><li><a href="#abschnitt-12"><span>12</span>Änderungen dieser Erklärung</a></li></ol></div></nav><div class="gast-text"><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-1"><!-- /gast -->
 <h2>1. Wer ist verantwortlich?</h2>
 <p>Verantwortlich für die Verarbeitung deiner Daten in diesem Chatbot ist:</p>
 <p>La Quesadilla<br>Falkenried 30<br>20251 Hamburg</p>
 <p>E-Mail: Info@laquesedila.com<br>Telefon: +494089721372</p>
 <p>Ein Datenschutzbeauftragter ist nicht bestellt; die Voraussetzungen des § 38 BDSG liegen nicht vor. Für alle Fragen zum Datenschutz wende dich bitte an die oben genannte E-Mail-Adresse.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-2"><!-- /gast -->
 <h2>2. Worum geht es hier?</h2>
 <p>Diese Erklärung gilt für den Chatbot „La Quesadilla", den du über Telegram erreichst. Sie gilt <b>nicht</b> für unsere Website, unser Geschäft vor Ort oder unsere Auftritte in sozialen Netzwerken — dafür gelten eigene Hinweise.</p>
 <p>Die Nutzung des Chatbots ist <b>freiwillig</b>. Du musst ihn nicht benutzen, um unser Angebot zu nutzen oder um eine Stempelkarte zu bekommen. Wenn du ihn nicht benutzen möchtest, schreib uns einfach eine E-Mail oder sprich uns vor Ort an.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-3"><!-- /gast -->
 <h2>3. Welche Daten verarbeiten wir, wozu und auf welcher Grundlage?</h2>
 <p>Wir speichern bewusst so wenig wie möglich. Insbesondere speichern wir <b>keine Telefonnummer, keine Adresse, kein Geburtsdatum und keine Zahlungs- oder Kaufdaten</b> im Chatbot.</p>
 <h3>3.1 Grunddaten (jede Nutzung)</h3>
 <table><thead><tr><th>Datum</th><th>Warum wir es brauchen</th></tr></thead><tbody>
-<tr><td><b>Chat-ID</b> — die Nummer, die Telegram deinem Chat gibt</td><td>Ohne sie können wir dir nicht antworten und dich beim nächsten Mal nicht wiedererkennen. Sie ist kein Klarname, aber sie gehört zu dir — deshalb behandeln wir sie als personenbezogenes Datum.</td></tr>
-<tr><td><b>Vorname</b> — so wie er in deinem Telegram-Profil steht</td><td>Damit die Antworten dich ansprechen und nicht „Hallo Nutzer" sagen.</td></tr>
-<tr><td><b>Kanal</b> (Telegram)</td><td>Damit die Antwort im richtigen Messenger landet.</td></tr>
-<tr><td><b>Zeitstempel</b> deiner letzten Aktion</td><td>Damit wir wissen, wann deine Daten zu löschen sind (siehe Abschnitt 6).</td></tr>
-<tr><td><b>Nachrichteninhalte</b> während des Gesprächs</td><td>Damit der Bot erkennt, was du möchtest, und dir die passenden Knöpfe oder den passenden Menüpunkt zeigt. Deine Frage inhaltlich beantworten kann er nicht.</td></tr></tbody></table>
+<tr><td data-th="Datum"><b>Chat-ID</b> — die Nummer, die Telegram deinem Chat gibt</td><td data-th="Warum wir es brauchen">Ohne sie können wir dir nicht antworten und dich beim nächsten Mal nicht wiedererkennen. Sie ist kein Klarname, aber sie gehört zu dir — deshalb behandeln wir sie als personenbezogenes Datum.</td></tr>
+<tr><td data-th="Datum"><b>Vorname</b> — so wie er in deinem Telegram-Profil steht</td><td data-th="Warum wir es brauchen">Damit die Antworten dich ansprechen und nicht „Hallo Nutzer" sagen.</td></tr>
+<tr><td data-th="Datum"><b>Kanal</b> (Telegram)</td><td data-th="Warum wir es brauchen">Damit die Antwort im richtigen Messenger landet.</td></tr>
+<tr><td data-th="Datum"><b>Zeitstempel</b> deiner letzten Aktion</td><td data-th="Warum wir es brauchen">Damit wir wissen, wann deine Daten zu löschen sind (siehe Abschnitt 6).</td></tr>
+<tr><td data-th="Datum"><b>Nachrichteninhalte</b> während des Gesprächs</td><td data-th="Warum wir es brauchen">Damit der Bot erkennt, was du möchtest, und dir die passenden Knöpfe oder den passenden Menüpunkt zeigt. Deine Frage inhaltlich beantworten kann er nicht.</td></tr></tbody></table>
 <p><b>Rechtsgrundlage:</b> deine Einwilligung, Art. 6 Abs. 1 lit. a DSGVO. Du gibst sie beim ersten Kontakt mit dem Button „Einverstanden". Ohne diese Einwilligung antwortet der Bot nicht.</p>
 <h3>3.2 Einwilligungsnachweis</h3>
 <p>Wenn du einwilligst, speichern wir zusätzlich <b>Zeitpunkt, Fassung des Einwilligungstextes und die Herkunft der Einwilligung</b>. Das müssen wir: Art. 7 Abs. 1 DSGVO verlangt, dass wir nachweisen können, dass du eingewilligt hast.</p>
@@ -55,9 +347,9 @@ footer a { color: #555; }
 <h3>3.4 Digitale Stempelkarte</h3>
 <p>Nutzt du die Stempelkarte, speichern wir zusätzlich:</p>
 <table><thead><tr><th>Datum</th><th>Warum</th></tr></thead><tbody>
-<tr><td><b>Anzahl deiner Stempel</b> (alle 10 Stempel gibt es 20% Rabatt)</td><td>Das ist der Zweck der Karte.</td></tr>
-<tr><td><b>Zeitpunkt des letzten Stempels</b></td><td>Für die Löschfrist und damit nicht versehentlich doppelt gestempelt wird.</td></tr>
-<tr><td><b>Einlösecode</b> und ob und wann er eingelöst wurde</td><td>Damit die Prämie genau einmal eingelöst werden kann.</td></tr></tbody></table>
+<tr><td data-th="Datum"><b>Anzahl deiner Stempel</b> (alle 10 Stempel gibt es 20% Rabatt)</td><td data-th="Warum">Das ist der Zweck der Karte.</td></tr>
+<tr><td data-th="Datum"><b>Zeitpunkt des letzten Stempels</b></td><td data-th="Warum">Für die Löschfrist und damit nicht versehentlich doppelt gestempelt wird.</td></tr>
+<tr><td data-th="Datum"><b>Einlösecode</b> und ob und wann er eingelöst wurde</td><td data-th="Warum">Damit die Prämie genau einmal eingelöst werden kann.</td></tr></tbody></table>
 <p>Ein Stempel wird von unserem Personal vergeben, nicht automatisch. Unser Personal sieht dabei deinen Vornamen, beim Einlösen zusätzlich den Code. Die Stempel-Anfrage mit deinem Vornamen bleibt im Telegram-Chat des Personals sichtbar, bis sie dort gelöscht wird.</p>
 <p><b>Rechtsgrundlage:</b> Einwilligung, Art. 6 Abs. 1 lit. a DSGVO — du entscheidest selbst, ob du die Karte nutzt.</p>
 <h3>3.5 Newsletter</h3>
@@ -68,69 +360,78 @@ footer a { color: #555; }
 <h3>3.6 Betriebsprotokoll</h3>
 <p>Der Bot protokolliert Vorgänge, bei denen etwas gespeichert wird (Einwilligung, Löschung, Feedback und Dankeschön, Stempel-Anfragen, Stempel und Einlösung von Codes und Newsletter-An- und -Abmeldung: welcher Schritt lief, wann, mit welchem Ergebnis). In diesem Protokoll steht <b>nicht deine Chat-ID, sondern nur eine Prüfsumme davon</b>. Das ist ein Pseudonym: die Prüfsumme wird mit einem geheimen Schlüssel gebildet, den nur wir und unser Dienstleister kennen. Ohne ihn lässt sie sich nicht nachrechnen – auch nicht von jemandem, der deine Chat-ID kennt –, und sie ist bei jedem Geschäft eine andere. Das Protokoll dient dem Nachweis, dass die Anlage ordnungsgemäß arbeitet, und der Fehlersuche. Bei <code>/loeschen</code> werden auch deine Einträge im Protokoll gelöscht.</p>
 <p><b>Rechtsgrundlage:</b> Rechenschaftspflicht nach Art. 5 Abs. 2 DSGVO sowie unser berechtigtes Interesse an einem funktionierenden und nachvollziehbaren System, Art. 6 Abs. 1 lit. f DSGVO.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-4"><!-- /gast -->
 <h2>4. Wer bekommt deine Daten?</h2>
 <p>Wir verkaufen deine Daten nicht und geben sie nicht zu Werbezwecken an Dritte weiter. Damit der Chatbot funktioniert, sind aber Dienstleister beteiligt:</p>
 <table><thead><tr><th>Dienstleister</th><th>Sitz</th><th>Wofür</th><th>Was er sieht</th></tr></thead><tbody>
-<tr><td><b>Saman Kaboli</b></td><td>Hamburg</td><td>Einrichtung und Betrieb des Chatbots in unserem Auftrag</td><td>alle in Abschnitt 3 genannten Daten</td></tr>
-<tr><td><b>n8n GmbH</b></td><td>Berlin, Deutschland</td><td>Plattform, auf der der Chatbot läuft, und <b>Speicherung aller Daten</b></td><td>alle in Abschnitt 3 genannten Daten</td></tr></tbody></table>
+<tr><td data-th="Dienstleister"><b>Saman Kaboli</b></td><td data-th="Sitz">Hamburg</td><td data-th="Wofür">Einrichtung und Betrieb des Chatbots in unserem Auftrag</td><td data-th="Was er sieht">alle in Abschnitt 3 genannten Daten</td></tr>
+<tr><td data-th="Dienstleister"><b>n8n GmbH</b></td><td data-th="Sitz">Berlin, Deutschland</td><td data-th="Wofür">Plattform, auf der der Chatbot läuft, und <b>Speicherung aller Daten</b></td><td data-th="Was er sieht">alle in Abschnitt 3 genannten Daten</td></tr></tbody></table>
 <p>Saman Kaboli verarbeitet deine Daten als Auftragsverarbeiter nach Art. 28 DSGVO nur nach unseren Weisungen; mit ihm besteht ein Vertrag über die Auftragsverarbeitung. Die übrigen genannten Dienstleister setzt Saman Kaboli mit unserer Genehmigung als Unterauftragsverarbeiter ein.</p>
 <p><b>Telegram FZ-LLC</b> (Dubai, Vereinigte Arabische Emirate) ist der Messenger, über den du mit uns schreibst. Telegram sieht deine Chat-ID, deinen Vornamen und die Inhalte der Nachrichten und verarbeitet sie nach seinen eigenen Bedingungen, denen du bei der Nutzung von Telegram zugestimmt hast.</p>
 <p>Darüber hinaus geben wir Daten nur weiter, wenn wir gesetzlich dazu verpflichtet sind.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-5"><!-- /gast -->
 <h2>5. Werden Daten außerhalb der EU verarbeitet?</h2>
 <p>Ja, teilweise:</p>
 <ul><li><b>Telegram FZ-LLC (Vereinigte Arabische Emirate):</b> Für die VAE gibt es <b>keinen Angemessenheitsbeschluss</b> der EU-Kommission. Das heißt: Die EU-Kommission hat nicht festgestellt, dass dort ein mit der EU vergleichbares Datenschutzniveau besteht. Wir stützen die Übermittlung deshalb auf deine <b>ausdrückliche Einwilligung</b> nach Art. 49 Abs. 1 lit. a DSGVO — genau darüber informiert dich dieser Abschnitt, bevor du im Chat auf „Einverstanden" tippst.</li></ul>
 <ul><li><b>n8n GmbH:</b> Sitz in Deutschland; Hosting-Region der Plattform: Germany West Central (Frankfurt am Main).</li></ul>
 <p>Ein Drittland bietet unter Umständen nicht dasselbe Schutzniveau wie die EU. Insbesondere kann nicht ausgeschlossen werden, dass dortige Behörden auf Daten zugreifen, ohne dass du dagegen denselben Rechtsschutz hast wie in der EU. <b>Wenn du das nicht möchtest, nutze den Chatbot bitte nicht</b> — schreib uns stattdessen an Info@laquesedila.com. Du erhältst dieselben Auskünfte und Leistungen auch auf diesem Weg, einschließlich Stempelkarte und Dankeschön fürs Feedback.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-6"><!-- /gast -->
 <h2>6. Wie lange speichern wir deine Daten?</h2>
 <p>Nicht „unbegrenzt". Ein automatischer Vorgang räumt jede Nacht auf und löscht, was abgelaufen ist. Es gibt mehrere Fristen, weil die Daten unterschiedlichen Zwecken dienen:</p>
 <table><thead><tr><th>Was</th><th>Frist</th><th>Gerechnet ab</th></tr></thead><tbody>
-<tr><td>Profil, Einwilligungsstatus, Newsletter-Status</td><td><b>365 Tage</b></td><td>deiner letzten Feedback- oder Newsletter-Aktion</td></tr>
-<tr><td>Stempelkarte, Stempelstand, Einlösecodes</td><td><b>730 Tage</b> (2 Jahre)</td><td>deinem letzten Stempel</td></tr>
-<tr><td>Einwilligungsnachweis</td><td><b>1095 Tage</b> (3 Jahre)</td><td>der Einwilligung oder deiner letzten Nutzung, je nachdem was später ist</td></tr>
-<tr><td>Unbestätigte Newsletter-Anmeldung</td><td><b>7 Tage</b></td><td>der Anmeldung</td></tr>
-<tr><td>Betriebsprotokoll (nur Prüfsumme)</td><td><b>1095 Tage</b> (3 Jahre)</td><td>dem Eintrag</td></tr>
-<tr><td>Löschnachweis (Prüfsumme + Datum + ob das Dankeschön schon vergeben war)</td><td><b>1095 Tage</b> (3 Jahre)</td><td>der Löschung</td></tr>
-<tr><td>Protokolle technischer Fehler der Plattform (nur wenn ein Vorgang scheitert; können Chat-ID, Vorname und Nachricht enthalten)</td><td>automatische Bereinigung durch die Plattform</td><td>dem Fehler</td></tr></tbody></table>
+<tr><td data-th="Was">Profil, Einwilligungsstatus, Newsletter-Status</td><td data-th="Frist"><b>365 Tage</b></td><td data-th="Gerechnet ab">deiner letzten Feedback- oder Newsletter-Aktion</td></tr>
+<tr><td data-th="Was">Stempelkarte, Stempelstand, Einlösecodes</td><td data-th="Frist"><b>730 Tage</b> (2 Jahre)</td><td data-th="Gerechnet ab">deinem letzten Stempel</td></tr>
+<tr><td data-th="Was">Einwilligungsnachweis</td><td data-th="Frist"><b>1095 Tage</b> (3 Jahre)</td><td data-th="Gerechnet ab">der Einwilligung oder deiner letzten Nutzung, je nachdem was später ist</td></tr>
+<tr><td data-th="Was">Unbestätigte Newsletter-Anmeldung</td><td data-th="Frist"><b>7 Tage</b></td><td data-th="Gerechnet ab">der Anmeldung</td></tr>
+<tr><td data-th="Was">Betriebsprotokoll (nur Prüfsumme)</td><td data-th="Frist"><b>1095 Tage</b> (3 Jahre)</td><td data-th="Gerechnet ab">dem Eintrag</td></tr>
+<tr><td data-th="Was">Löschnachweis (Prüfsumme + Datum + ob das Dankeschön schon vergeben war)</td><td data-th="Frist"><b>1095 Tage</b> (3 Jahre)</td><td data-th="Gerechnet ab">der Löschung</td></tr>
+<tr><td data-th="Was">Protokolle technischer Fehler der Plattform (nur wenn ein Vorgang scheitert; können Chat-ID, Vorname und Nachricht enthalten)</td><td data-th="Frist">automatische Bereinigung durch die Plattform</td><td data-th="Gerechnet ab">dem Fehler</td></tr></tbody></table>
 <p><b>Wichtig und ehrlich gesagt:</b> Ein Chat mit dem Bot allein verlängert diese Fristen nicht. Maßgeblich ist deine letzte <i>inhaltliche</i> Aktion — ein Sterne-Feedback, ein Stempel oder eine Newsletter-Anmeldung. Der Einwilligungsnachweis läuft am längsten, weil wir gesetzlich nachweisen können müssen, dass du eingewilligt hattest.</p>
 <p>Löschen heißt bei uns <b>löschen</b>: die Zeile verschwindet aus der Datenbank, sie wird nicht nur unkenntlich gemacht.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-7"><!-- /gast -->
 <h2>7. Was passiert, wenn du löschen lässt?</h2>
 <p>Schreib <b><code>/loeschen</code></b> in den Chat. Du wirst einmal um Bestätigung gebeten — danach werden gelöscht: dein Profil, dein Einwilligungsnachweis, deine Stempelkarte samt Stempeln und Codes, deine Newsletter-Anmeldung und deine Einträge im Betriebsprotokoll.</p>
 <p><b>Es bleibt genau eine Sache übrig:</b> ein Löschnachweis aus dem <b>Datum</b> und einer <b>Prüfsumme deiner Chat-ID</b> — nicht die Chat-ID selbst — und, ob du das Dankeschön schon erhalten hattest. Diesen Nachweis behalten wir. Dafür gibt es zwei Gründe:</p>
 <ol><li>Wir müssen belegen können, dass wir deiner Löschaufforderung nachgekommen sind (Art. 5 Abs. 2 DSGVO).</li><li>Das Dankeschön fürs Feedback soll nicht durch wiederholtes Löschen und Neuanmelden mehrfach vergeben werden können.</li></ol>
 <p>Praktische Folge: Du kannst den Bot jederzeit wieder benutzen — schreib einfach <code>/start</code>. Das Dankeschön fürs Feedback gibt es allerdings nur einmal. Auch dieser Nachweis wird nach 1095 Tagen gelöscht.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-8"><!-- /gast -->
 <h2>8. Deine Rechte</h2>
 <p>Du hast nach der DSGVO diese Rechte. Die drei wichtigsten kannst du <b>direkt im Chat</b> ausüben, ohne uns zu schreiben und ohne einen Grund zu nennen:</p>
 <table><thead><tr><th>Recht</th><th>So geht's</th><th>Artikel</th></tr></thead><tbody>
-<tr><td><b>Auskunft</b> — was ist über mich gespeichert?</td><td><code>/meinedaten</code> in den Chat schreiben</td><td>Art. 15</td></tr>
-<tr><td><b>Datenkopie</b> — alles in maschinenlesbarer Form</td><td><code>/export</code> in den Chat schreiben</td><td>Art. 20</td></tr>
-<tr><td><b>Löschung</b></td><td><code>/loeschen</code> in den Chat schreiben</td><td>Art. 17</td></tr>
-<tr><td><b>Widerruf des Newsletters</b></td><td>„Abmelden" in den Chat schreiben</td><td>Art. 7 Abs. 3</td></tr>
-<tr><td><b>Berichtigung</b> falscher Daten</td><td>E-Mail an Info@laquesedila.com</td><td>Art. 16</td></tr>
-<tr><td><b>Einschränkung der Verarbeitung</b></td><td>E-Mail an Info@laquesedila.com</td><td>Art. 18</td></tr>
-<tr><td><b>Widerspruch</b> gegen Verarbeitung aufgrund berechtigten Interesses</td><td>E-Mail an Info@laquesedila.com</td><td>Art. 21</td></tr></tbody></table>
+<tr><td data-th="Recht"><b>Auskunft</b> — was ist über mich gespeichert?</td><td data-th="So geht's"><code>/meinedaten</code> in den Chat schreiben</td><td data-th="Artikel">Art. 15</td></tr>
+<tr><td data-th="Recht"><b>Datenkopie</b> — alles in maschinenlesbarer Form</td><td data-th="So geht's"><code>/export</code> in den Chat schreiben</td><td data-th="Artikel">Art. 20</td></tr>
+<tr><td data-th="Recht"><b>Löschung</b></td><td data-th="So geht's"><code>/loeschen</code> in den Chat schreiben</td><td data-th="Artikel">Art. 17</td></tr>
+<tr><td data-th="Recht"><b>Widerruf des Newsletters</b></td><td data-th="So geht's">„Abmelden" in den Chat schreiben</td><td data-th="Artikel">Art. 7 Abs. 3</td></tr>
+<tr><td data-th="Recht"><b>Berichtigung</b> falscher Daten</td><td data-th="So geht's">E-Mail an Info@laquesedila.com</td><td data-th="Artikel">Art. 16</td></tr>
+<tr><td data-th="Recht"><b>Einschränkung der Verarbeitung</b></td><td data-th="So geht's">E-Mail an Info@laquesedila.com</td><td data-th="Artikel">Art. 18</td></tr>
+<tr><td data-th="Recht"><b>Widerspruch</b> gegen Verarbeitung aufgrund berechtigten Interesses</td><td data-th="So geht's">E-Mail an Info@laquesedila.com</td><td data-th="Artikel">Art. 21</td></tr></tbody></table>
 <p><b>Widerruf der Einwilligung:</b> Du kannst deine Einwilligung jederzeit für die Zukunft widerrufen. Der Widerruf ist so einfach wie die Erteilung. Die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt davon unberührt. Der vollständige Widerruf entspricht <code>/loeschen</code>.</p>
 <p>Anfragen per E-Mail beantworten wir unverzüglich, spätestens innerhalb eines Monats (Art. 12 Abs. 3 DSGVO).</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-9"><!-- /gast -->
 <h2>9. Beschwerderecht</h2>
 <p>Wenn du der Meinung bist, dass wir deine Daten nicht richtig verarbeiten, kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren — bei der für uns zuständigen oder bei der an deinem Wohnort (Art. 77 DSGVO).</p>
 <p>Für uns zuständig ist:</p>
 <p>Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit, Hamburg</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-10"><!-- /gast -->
 <h2>10. Müssen deine Daten bereitgestellt werden?</h2>
 <p>Nein. Es gibt keine gesetzliche oder vertragliche Pflicht, den Chatbot zu nutzen oder uns Daten zu geben. Die einzige Folge, wenn du nicht einwilligst: Der Bot antwortet nicht, du bekommst keine digitale Stempelkarte und keinen Newsletter über Telegram. Andere Nachteile entstehen dir dadurch nicht — Stempelkarte und Dankeschön fürs Feedback bekommst du auf Wunsch auch ohne Chatbot vor Ort.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-11"><!-- /gast -->
 <h2>11. Sicherheit</h2>
 <p>Die Übertragung zwischen dir und Telegram sowie zwischen Telegram und unserem System erfolgt verschlüsselt (TLS). Der Zugang zum System ist auf den Betreiber beschränkt. Die Chat-ID wird in Protokollen nur als Prüfsumme gespeichert. Die Einzelheiten unserer technischen und organisatorischen Maßnahmen nach Art. 32 DSGVO stellen wir auf Anfrage zur Verfügung.</p>
-<hr>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><section class="abschnitt" id="abschnitt-12"><!-- /gast -->
 <h2>12. Änderungen dieser Erklärung</h2>
 <p>Wir passen diese Erklärung an, wenn wir den Chatbot ändern. Ändert sich etwas Wesentliches an der Verarbeitung, fragen wir deine Einwilligung im Chat neu ab — du bekommst den Hinweis dann automatisch beim nächsten Kontakt.</p>
 <p>Die jeweils geltende Fassung ist oben mit Datum und Fassungsnummer gekennzeichnet.</p>
-<hr>
-<p><i>Diese Erklärung beschreibt ausschließlich den Telegram-Chatbot „La Quesadilla" von La Quesadilla. Fassung v1.5-2026-10+BSN, Stand 12.10.2026.</i></p>
-<footer><b>Stammplatz</b> – Gäste-Chat für Restaurants und Läden · <a href="/">Start</a> · <a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz dieser Website</a></footer>
-</body></html>
+<!-- gast --></section><!-- /gast --><hr><!-- gast --><div class="gast-schluss"><!-- /gast -->
+<p><i>Diese Erklärung beschreibt ausschließlich den Telegram-Chatbot „La Quesadilla" von La Quesadilla. Fassung v1.5-2026-10+BSN, Stand 12.10.2026.</i></p><!-- gast --></div><!-- /gast --><!-- gast --><p class="gast-zurueck"><a class="knopf" href="https://t.me/LaQuesadilla_Kundenchatbot">Zurück zum Chat</a></p></div></div><!-- /gast -->
+</div>
+<!-- /INHALT -->
+</main>
+<footer class="fuss">
+  <div>
+    <span><svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><circle cx="15" cy="17" r="10" fill="none" stroke="var(--marke,#E2A72E)" stroke-width="3"></circle><circle cx="22.5" cy="9.5" r="5" fill="var(--marke,#E2A72E)" stroke="#F7F3EC" stroke-width="2.5"></circle></svg>Chat-Technik: Stammplatz</span>
+    <nav><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz dieser Website</a></nav>
+  </div>
+</footer>
+</body>
+</html>

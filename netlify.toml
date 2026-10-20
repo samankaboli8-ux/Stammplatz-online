@@ -7,6 +7,8 @@
 [build.processing]
   skip_processing = true
 
+# Kein Skript, keine Fremdquellen: Stil steht in jeder Seite, Bilder und Schriften nur von hier.
+# Suchmaschinen: noch die alte Website - alle Seiten noindex per Kopfzeile (bis --einrichten).
 [[headers]]
   for = "/*"
   [headers.values]
@@ -14,4 +16,4 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "no-referrer"
     X-Robots-Tag = "noindex"
-    Content-Security-Policy = "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'self'"
+    Content-Security-Policy = "default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
